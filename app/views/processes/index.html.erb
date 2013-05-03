@@ -1,0 +1,30 @@
+<h1>Processes</h1>
+
+<p><%= link_to 'Add a New Process', new_process_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @processes.each do |process| %>
+    <tr>
+      <td><%= process.name %></td>
+      <td><%= process.start_date %></td>
+  
+      <td><%= link_to 'Show', process_url(process) %></td>
+      <td><%= link_to 'Edit', edit_process_url(process) %></td>
+      <td><%= link_to 'Destroy', process_url(process), method: 'delete', data: { confirm: "Do you really want to delete this process?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

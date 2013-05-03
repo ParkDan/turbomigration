@@ -1,0 +1,32 @@
+<h1>Forms</h1>
+
+<p><%= link_to 'Add a New Form', new_form_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Name</th>
+      <th>Process</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @forms.each do |form| %>
+    <tr>
+      <td><%= form.source %></td>
+      <td><%= form.name %></td>
+      <td><%= form.process_id %></td>
+  
+      <td><%= link_to 'Show', form_url(form) %></td>
+      <td><%= link_to 'Edit', edit_form_url(form) %></td>
+      <td><%= link_to 'Destroy', form_url(form), method: 'delete', data: { confirm: "Do you really want to delete this form?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

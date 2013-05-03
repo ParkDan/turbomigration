@@ -1,0 +1,21 @@
+<h1>Editing Process #<%= @process.id %></h1>
+
+
+<%= form_tag(process_url(@process), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @process.name %>
+  </div>
+
+  <div>
+    <%= label_tag :start_date %><br />
+    <%= date_select_tag :start_date, @process.start_date %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Process" %>
+  </div>
+
+<% end %>

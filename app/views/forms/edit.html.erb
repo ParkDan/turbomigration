@@ -1,0 +1,26 @@
+<h1>Editing Form #<%= @form.id %></h1>
+
+
+<%= form_tag(form_url(@form), method: 'put') do %>
+
+  <div>
+    <%= label_tag :source %><br />
+    <%= text_field_tag :source, @form.source %>
+  </div>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @form.name %>
+  </div>
+
+  <div>
+    <%= label_tag :process_id %><br />
+    <%= number_field_tag :process_id, @form.process_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Form" %>
+  </div>
+
+<% end %>
